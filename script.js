@@ -13,7 +13,7 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
-// Smooth scrolling for navigation links 
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -27,7 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-//Navbar scroll effect
+// Navbar scroll effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
@@ -71,12 +71,18 @@ document.querySelectorAll('.about-text, .about-image').forEach(el => {
     observer.observe(el);
 });
 
-// Add parallax effect to hero section
+// Add parallax effect to hero section (with limit to prevent overlap)
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
-    if (hero) {
+    const heroHeight = hero ? hero.offsetHeight : 0;
+    
+    if (hero && scrolled < heroHeight) {
+        // Only apply parallax while hero is visible
         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    } else if (hero && scrolled >= heroHeight) {
+        // Lock the transform once scrolled past hero
+        hero.style.transform = `translateY(${heroHeight * 0.5}px)`;
     }
 });
 
