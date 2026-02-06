@@ -50,3 +50,51 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
+
+// Observe all elements with fade-in class
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+});
+
+// Observe accomplishment cards
+document.querySelectorAll('.accomplishment-card').forEach(el => {
+    observer.observe(el);
+});
+
+// Observe project cards
+document.querySelectorAll('.project-card').forEach(el => {
+    observer.observe(el);
+});
+
+// Observe about section elements
+document.querySelectorAll('.about-text, .about-image').forEach(el => {
+    observer.observe(el);
+});
+
+// Add parallax effect to hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// Add typing effect to hero title (optional enhancement)
+const heroTitle = document.querySelector('.hero h1');
+if (heroTitle) {
+    const text = heroTitle.textContent;
+    heroTitle.textContent = '';
+    let i = 0;
+    
+    setTimeout(() => {
+        const typeWriter = () => {
+            if (i < text.length) {
+                heroTitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        typeWriter();
+    }, 500);
+}
