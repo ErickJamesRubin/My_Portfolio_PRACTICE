@@ -442,3 +442,44 @@ section {
     color: var(--secondary-color);
     transform: translateX(5px);
 }
+
+/* Contact Section */
+#contact {
+  background: var(--bg-light);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-content p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.contact-link:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
