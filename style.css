@@ -483,3 +483,15 @@ section {
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
+
+/* Footer */
+footer{
+  background: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+}
+
+footer p {
+    opacity: 0.8;
+}
