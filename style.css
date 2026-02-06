@@ -287,3 +287,58 @@ section {
     font-size: 4rem;
     box-shadow: var(--shadow-lg);
 }
+
+/* Accomplishments Section */
+#accomplishments {
+  background: var(--bg-light);
+}
+
+.accomplishments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.accomplishment-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.accomplishment-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.accomplishment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.accomplishment-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.accomplishment-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.accomplishment-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
